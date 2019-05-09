@@ -1,0 +1,25 @@
+const path = require("path");
+const nodeExternals = require("webpack-node-externals");
+const { NODE_ENV = "production" } = process.env;
+
+module.exports = {
+    entry: "./index.ts",
+    mode: NODE_ENV,
+    target: "node",
+    output: {
+        path: path.resolve(__dirname, "build"),
+        filename: "index.js"
+    },
+    resolve: {
+        extensions: [".ts", ".js"],
+        alias: {
+            "@controllers": path.resolve(__dirname, "src/controllers/"),
+            "@models": path.resolve(__dirname, "src/models/"),
+            "@interfaces": path.relative(__dirname, "src/interfaces/")
+        }
+    },
+    module: {
+        rules: [{ test: /\.ts$/, use: "ts-loader" }]
+    },
+    externals: [nodeExternals()]
+};
