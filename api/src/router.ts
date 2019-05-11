@@ -1,4 +1,4 @@
-import { index } from "@controllers/budget";
+import { index } from "@controllers/budgetsController";
 
 const router = require("express").Router();
 

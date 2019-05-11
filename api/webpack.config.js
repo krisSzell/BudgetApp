@@ -1,9 +1,10 @@
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
+const WebpackShellPlugin = require("webpack-shell-plugin");
 const { NODE_ENV = "production" } = process.env;
 
 module.exports = {
-    entry: "./index.ts",
+    entry: "./src/index.ts",
     mode: NODE_ENV,
     target: "node",
     output: {
@@ -21,5 +22,11 @@ module.exports = {
     module: {
         rules: [{ test: /\.ts$/, use: "ts-loader" }]
     },
-    externals: [nodeExternals()]
+    externals: [nodeExternals()],
+    plugins: [
+        new WebpackShellPlugin({
+            onBuildEnd: ["npm run start:dev"]
+        })
+    ],
+    watch: NODE_ENV === "development"
 };

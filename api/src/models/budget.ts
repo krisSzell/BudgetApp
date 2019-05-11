@@ -1,4 +1,5 @@
 import { Document, Schema, model, Model } from "mongoose";
+
 import { IBudget } from "@interfaces/budget";
 
 export interface IBudgetModel extends IBudget, Document {}
