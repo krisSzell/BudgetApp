@@ -12,7 +12,10 @@ const ExpenseSchema: Schema = new Schema({
     comment: String
 });
 
-export const Expense: Model<IExpenseModel> = model<IExpenseModel>(
-    "Expense",
-    ExpenseSchema
-);
+export const Expense: Model<IExpenseModel> = model<IExpenseModel>("Expense", ExpenseSchema);
+
+export function toDto(model: IExpenseModel): IExpense {
+    const { budgetId, value, createdAt, comment } = model;
+
+    return { budgetId, value, createdAt, comment };
+}

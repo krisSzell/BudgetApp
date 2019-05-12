@@ -12,7 +12,10 @@ const IncomeSchema: Schema = new Schema({
     comment: String
 });
 
-export const Income: Model<IIncomeModel> = model<IIncomeModel>(
-    "Income",
-    IncomeSchema
-);
+export const Income: Model<IIncomeModel> = model<IIncomeModel>("Income", IncomeSchema);
+
+export function toDto(model: IIncomeModel): IIncome {
+    const { budgetId, value, createdAt, comment } = model;
+
+    return { budgetId, value, createdAt, comment };
+}

@@ -16,7 +16,8 @@ module.exports = {
         alias: {
             "@controllers": path.resolve(__dirname, "src/controllers/"),
             "@models": path.resolve(__dirname, "src/models/"),
-            "@interfaces": path.relative(__dirname, "src/interfaces/")
+            "@interfaces": path.resolve(__dirname, "src/interfaces/"),
+            "@repositories": path.resolve(__dirname, "src/repositories/")
         }
     },
     module: {

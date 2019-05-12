@@ -9,7 +9,8 @@
         "start:dev": "set NODE_ENV=development&& nodemon build/index.js",
         "build:dev": "set NODE_ENV=development&& webpack",
         "build": "webpack",
-        "test": "jest"
+        "test": "jest",
+        "seedDb": "ts-node ./src/database/seedDb.ts"
     },
     "keywords": [],
     "author": "",
