@@ -1,8 +1,6 @@
-import { Decimal128 } from "bson";
-
 export interface IIncome {
     budgetId: string;
-    value: Decimal128;
+    value: number;
     createdAt?: Date;
     comment?: string;
 }

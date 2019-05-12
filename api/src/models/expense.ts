@@ -1,14 +1,14 @@
 import { Document, Schema, model, Model } from "mongoose";
-import { Decimal128 } from "mongodb";
 
 import { IExpense } from "@interfaces/expense";
+import { toReadable, toStoreable } from "./_monetaryExtensions";
 
 export interface IExpenseModel extends IExpense, Document {}
 
 const ExpenseSchema: Schema = new Schema({
     budgetId: { type: String, required: true },
-    value: { type: Decimal128, required: true },
-    createdAt: Date,
+    value: { type: Number, required: true, get: toReadable, set: toStoreable },
+    createdAt: { type: Date, default: Date.now },
     comment: String
 });
 

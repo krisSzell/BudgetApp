@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 
 import { Budget } from "@models/budget";
-import { asyncRoute } from "./asyncWrapper";
+import { asyncRoute } from "./_asyncWrapper";
 
 export const index = asyncRoute(
     async (_request: Request, response: Response) => {

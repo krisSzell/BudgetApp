@@ -330,4 +330,4 @@ ASALocalRun/
 .mfractor/
 secrets.js
 build
-package-lock.json
+package-lock.json*
