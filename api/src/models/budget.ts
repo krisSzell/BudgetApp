@@ -17,10 +17,13 @@ export const toDto = (
     model: IBudgetModel,
     incomes: IIncome[] = [],
     expenses: IExpense[] = []
-): IBudget => ({
-    _id: model.id,
-    year: model.year,
-    month: model.month,
-    incomes,
-    expenses
-});
+): IBudget =>
+    model
+        ? {
+              _id: model.id,
+              year: model.year,
+              month: model.month,
+              incomes,
+              expenses
+          }
+        : ({} as IBudget);

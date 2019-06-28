@@ -17,7 +17,8 @@ module.exports = {
             "@controllers": path.resolve(__dirname, "src/controllers/"),
             "@models": path.resolve(__dirname, "src/models/"),
             "@interfaces": path.resolve(__dirname, "src/interfaces/"),
-            "@repositories": path.resolve(__dirname, "src/repositories/")
+            "@repositories": path.resolve(__dirname, "src/repositories/"),
+            "@errors": path.resolve(__dirname, "src/errors/")
         }
     },
     module: {
